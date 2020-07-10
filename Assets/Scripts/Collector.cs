@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Collector : MonoBehaviour
 {
     public Text scoreText;
     public int score;
+    public ParticleSystem dest;
 
     void IncreaseScore()
     {
@@ -19,6 +18,7 @@ public class Collector : MonoBehaviour
         {
             IncreaseScore();
             Destroy(target.gameObject);
+            dest.Play();
         }
     }
 }

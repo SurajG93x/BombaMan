@@ -5,25 +5,11 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     private float minX = -2.5f, maxX = 2.5f;
+    [SerializeField] private GameObject rock;
 
-    public GameObject rock;
-
-    // Start is called before the first frame update
-
-    private void Awake()
-    {
-        rock = GameObject.FindGameObjectWithTag("Enemy");
-    }
     void Start()
     {
-        /*rock = GameObject.FindGameObjectWithTag("Enemy").GetComponent<GameObject>();*/
         StartCoroutine(SpawnEnemy());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator SpawnEnemy()

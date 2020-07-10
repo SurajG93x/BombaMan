@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
 
     public GameObject player;
+    [SerializeField] private GameObject gameOver;
     Spawner spawner;
 
     public float speed = 10f;
@@ -62,6 +63,8 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(player);
             Destroy(spawner);
+            FindObjectOfType<GameManager>().GameOver();
+            gameOver.SetActive(true);
         }
     }
 }
